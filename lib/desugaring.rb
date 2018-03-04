@@ -15,13 +15,13 @@ module DesugaringExercises
   #
   #   foo(bar, baz)
   #
-  # You can see a lot of this in the AASM code in this homework. That is the common sort of use for code
+  # You can see a lot of this in the AASM code in this homework. That is a common sort of use for code
   # poetry: declarative calls that are meant almost to read as a custom language.
   #
   # Copy the contents of the previous method here and remove this sugar.
   #
   def desugared_poetry(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # Ruby allows you to pass arguments identified by name instead of just by position. They are really just
@@ -36,7 +36,7 @@ module DesugaringExercises
   # Copy the contents of the previous method here and remove this sugar.
   #
   def desugared_named_args(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # Ruby’s general syntax for hashes is `{key => value, key => value, ...}`. Because it is so common to use
@@ -51,13 +51,13 @@ module DesugaringExercises
   # Copy the contents of the previous method here and remove this sugar.
   #
   def desugared_symbol_keys(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
-  # You may be wondering how `map(&:email)` works. When you preceded the last argument of a method call with
+  # You may be wondering how `map(&:email)` works. When you precede the last argument of a method call with
   # `&`, Ruby calls `to_proc` on whatever comes after the ampersand and then tries to pass that as a block
-  # to the method being called. And if you call `to_proc` on a symbol, you get a closure that calls the
-  # method with that name on its argument.
+  # to the method being called. And if you call `to_proc` on a symbol, you get a one-argument closure that
+  # tries to call a method on its argument named after the symbol.
   #
   # In other words, this:
   #
@@ -70,12 +70,12 @@ module DesugaringExercises
   # Copy the contents of the previous method here and remove this sugar.
   #
   def desugared_attr_proc(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # You may recall from the Ruby koans that when you put `#{something}` in a `"`-delimited string, Ruby will
-  # evaluate `something` as Ruby code, converts the result to a string by calling `to_s`, and then
-  # concatenates it all together.
+  # evaluate `something` as Ruby code, convert the result to a string by calling `to_s`, and then
+  # concatenate it all together.
   #
   # This feature is called “string interpolation.” For example:
   #
@@ -88,10 +88,10 @@ module DesugaringExercises
   # Copy the contents of the previous method here and remove this sugar.
   #
   def desugared_interpolation(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
-  # Ruby tracks local variable lexically at compile time. Wherever you say `x = y`, the compiler assumes that
+  # Ruby tracks local variables lexically at compile time. Wherever you say `x = y`, the compiler assumes that
   # `x` is a local variable, and implicitly declares it if it’s not already declared. You also create a local
   # variable when you make a method parameter or block parameter.
   #
@@ -110,7 +110,7 @@ module DesugaringExercises
   # (Think: which names are local variables, and which are not?)
   #
   def desugared_implicit_self(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # In Ruby, unlike Python, there are no properties distinct from method calls. When you say `x.y`, you are
@@ -131,7 +131,7 @@ module DesugaringExercises
   # but structurally quite similar!
   #
   def desugared_implicit_parens(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # In Ruby, every value is an object and every action is a method call. That includes operators. A binary
@@ -147,13 +147,13 @@ module DesugaringExercises
   #
   # Copy the contents of the previous method here and remove this sugar.
   #
-  # P.S. This one gets messy! Use line breaks and indentation to help
+  # P.S. This one gets messy! Use line breaks and indentation to help.
   # P.P.S. Note that whitespace is syntactic sugar too.
   # P.P.P.S. For full credit on this one, note that addition is left-associative: the things on the left
   #   get added before the things on the right. (a + b + c) means ((a + b) + c), NOT (a + (b + c)).
   #
   def desugared_operators(recipients, event, message)
-    implement_me
+    implement_me!
   end
 
   # Compare that to the version at the top.

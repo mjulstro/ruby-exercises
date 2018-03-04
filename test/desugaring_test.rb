@@ -75,7 +75,7 @@ class MockMailer
     @mail_calls << args
   end
 
-  def implement_me
+  def implement_me!
     @todo_callback.call
   end
 end
